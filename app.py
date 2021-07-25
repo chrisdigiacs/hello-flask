@@ -5,6 +5,9 @@ app =  Flask(__name__)
 #yo
 #yoyoyoyo
 @app.route("/")
-def helloWorld():
+def route_helloWorld():
     return render_template("hello.html")
 
+@app.route("/<name>")
+def route_hello_name(name):
+    return "<h1>Hello, {name}!</h1>"
